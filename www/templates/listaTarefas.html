@@ -1,0 +1,20 @@
+<ion-view view-title="Tarefas">
+    <ion-content>
+        <ion-list>
+            <ion-item href="#">
+                <h2>Item Teste</h2>
+                <p>Endereço Teste</p>
+                <ion-option-button class="button-positive" ng-click="vm.btnConcluir(item)">
+                    Concluir
+                </ion-option-button>
+            </ion-item>
+            <ion-item ng-repeat="item in vm.tarefas" href="#">
+                <h2>{{item.destinatario}}</h2>
+                <p>{{item.endereco| formatAdress}}</p>
+                <ion-option-button class="button-positive" ng-click="vm.btnConcluir(item)">
+                    Concluir
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
