@@ -14,6 +14,7 @@
             firebase.database().ref('estabelecimentos/-KKipucz8AD8xJ6NLedH/entregas/')
                     .orderByKey()
                     .on('value', function (snapshot) {
+                        console.log('On Firebase')
                         $this.tarefas = snapshot.val();
                         if (!$scope.$$phase) {
                             $scope.$apply();
@@ -26,6 +27,7 @@
         function concluirAction() {
             console.log('Acionado');
             $ionicPlatform.ready(function () {
+                console.log('Platform Ready');
                 var posOptions = {timeout: 10000, enableHighAccuracy: false};
                 $cordovaGeolocation
                         .getCurrentPosition(posOptions)
