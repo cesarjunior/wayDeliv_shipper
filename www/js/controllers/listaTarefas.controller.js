@@ -11,6 +11,8 @@
 
         getTarefas();
         function getTarefas() {
+            console.log('Executando getTarefas');
+            console.log(firebase);
             firebase.database().ref('estabelecimentos/-KKipucz8AD8xJ6NLedH/entregas/')
                     .orderByKey()
                     .on('value', function (snapshot) {
