@@ -57,12 +57,13 @@
                             }
                         })
 
-                        .state('app.single', {
-                            url: '/playlists/:playlistId',
+                        .state('app.concluirTarefa', {
+                            url: '/concluir-tarefa/:idTarefa',
                             views: {
                                 'menuContent': {
-                                    templateUrl: 'templates/playlist.html',
-                                    controller: 'PlaylistCtrl'
+                                    templateUrl: 'templates/concluirTarefa.html',
+                                    controller: 'concluirTarefaController',
+                                    controllerAs: 'vm'
                                 }
                             }
                         });

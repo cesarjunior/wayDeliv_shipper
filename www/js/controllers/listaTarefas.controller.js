@@ -3,20 +3,20 @@
     angular.module('wd-Shipper')
             .controller('listaTarefasController', listaTarefasController);
 
-    listaTarefasController.$inject = ['$scope', '$ionicPlatform', '$cordovaGeolocation', '$cordovaDialogs'];
-    function listaTarefasController($scope, $ionicPlatform, $cordovaGeolocation, $cordovaDialogs) {
+    listaTarefasController.$inject = ['$scope', '$ionicPlatform', '$cordovaGeolocation', '$cordovaDialogs', '$ionicLoading'];
+    function listaTarefasController($scope, $ionicPlatform, $cordovaGeolocation, $cordovaDialogs, $ionicLoading) {
         var $this = this;
 
         $this.tarefas = [];
 
         getTarefas();
         function getTarefas() {
-            console.log('Executando getTarefas');
-            console.log(firebase);
+            $ionicLoading.show();
             firebase.database().ref('estabelecimentos/-KKipucz8AD8xJ6NLedH/entregas/')
-                    .orderByKey()
+                    .orderByChild('situacao')
+                    .equalTo(null)
                     .on('value', function (snapshot) {
-                        console.log('On Firebase')
+                        $ionicLoading.hide();
                         $this.tarefas = snapshot.val();
                         if (!$scope.$$phase) {
                             $scope.$apply();
@@ -27,23 +27,7 @@
 
         $this.btnConcluir = concluirAction;
         function concluirAction() {
-            console.log('Acionado');
-            $ionicPlatform.ready(function () {
-                console.log('Platform Ready');
-                var posOptions = {timeout: 10000, enableHighAccuracy: false};
-                $cordovaGeolocation
-                        .getCurrentPosition(posOptions)
-                        .then(function (position) {
-                            console.log(position);
-                            var lat = position.coords.latitude
-                            var long = position.coords.longitude
-                            $cordovaDialogs.alert('Latitude: ' + lat + ' Longitude: ' +long, 'Teste Dialog', 'OK');
-                            $cordovaDialogs.beep(3);
-                        }, function (err) {
-                            // error
-                        });
-
-            });
+            
         }
     }
 })();

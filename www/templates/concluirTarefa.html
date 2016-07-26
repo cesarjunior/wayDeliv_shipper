@@ -1,0 +1,32 @@
+<ion-view view-title="Concluir entrega">
+    <ion-content>
+        <ion-list>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Destinatário</span>
+                <p>{{vm.destinatario}}</p>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Endereço</span>
+                <p>{{vm.endereco}}</p>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Situação</span>
+                <select ng-model="vm.situacao">
+                    <option selected>Entregue/assinada</option>
+                    <option>Recusado</option>
+                    <option>Não encontrado/ausente</option>
+                    <option>Mudou-se</option>
+                    <option>Desconhecido</option>
+                    <option>Endereço inexistente/incompleto</option>
+                </select>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Observação</span>
+                <textarea ng-model="vm.observacao"></textarea>
+            </label>
+        </ion-list>
+        <button class="button button-full button-balanced" ng-click="vm.finalizarTarefa()">
+            Finalizar Tarefa
+        </button>
+    </ion-content>
+</ion-view>

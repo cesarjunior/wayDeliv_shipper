@@ -5722,6 +5722,9 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
     color: #666;
     font-size: 14px;
     margin-bottom: 2px; }
+  .item-stacked-label p {
+      padding: 4px 8px 3px 0;
+  }
   .item h1:last-child,
   .item h2:last-child,
   .item h3:last-child,
@@ -7683,6 +7686,7 @@ textarea {
     vertical-align: middle; }
 
 .item-stacked-label input,
+.item-stacked-label select,
 .item-stacked-label textarea {
   -webkit-border-radius: 2px;
   border-radius: 2px;
@@ -7720,6 +7724,7 @@ textarea {
       transition: opacity 0.15s ease-in, top 0.2s linear; }
 
 textarea,
+select,
 input[type="text"],
 input[type="password"],
 input[type="datetime"],
