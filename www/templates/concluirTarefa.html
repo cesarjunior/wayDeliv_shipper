@@ -25,6 +25,8 @@
                 <textarea ng-model="vm.observacao"></textarea>
             </label>
         </ion-list>
+        <img id="myImage" />
+        <button class="button icon-left ion-android-camera" ng-click="vm.iniciarCamera()">Tirar Foto</button>
         <button class="button button-full button-balanced" ng-click="vm.finalizarTarefa()">
             Finalizar Tarefa
         </button>
