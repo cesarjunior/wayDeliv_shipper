@@ -50,22 +50,14 @@
         function iniciarCameraAction() {
             $ionicPlatform.ready(function () {
                 var options = {
-                    quality: 50,
-                    destinationType: Camera.DestinationType.DATA_URL,
+                    destinationType: Camera.DestinationType.FILE_URI,
                     sourceType: Camera.PictureSourceType.CAMERA,
-                    allowEdit: true,
-                    encodingType: Camera.EncodingType.JPEG,
-                    targetWidth: 100,
-                    targetHeight: 100,
-                    popoverOptions: CameraPopoverOptions,
-                    saveToPhotoAlbum: false,
-                    correctOrientation: true
                 };
 
                 $cordovaCamera.getPicture(options).then(function (imageData) {
                     console.log(imageData);
                     var image = document.getElementById('myImage');
-                    image.src = "data:image/jpeg;base64," + imageData;
+                    image.src = imageData;
                 }, function (error) {
                     console.log(error);
                 });
