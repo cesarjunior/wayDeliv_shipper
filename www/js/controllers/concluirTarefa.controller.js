@@ -49,15 +49,23 @@
         $this.iniciarCamera = iniciarCameraAction;
         function iniciarCameraAction() {
             $ionicPlatform.ready(function () {
+                console.log(Camera.DestinationType.DATA_URL);
                 var options = {
-                    destinationType: Camera.DestinationType.FILE_URI,
+                    quality: 75,
+                    destinationType: Camera.DestinationType.DATA_URL,
                     sourceType: Camera.PictureSourceType.CAMERA,
+                    allowEdit: true,
+                    encodingType: Camera.EncodingType.JPEG,
+                    targetWidth: 300,
+                    targetHeight: 300,
+                    popoverOptions: CameraPopoverOptions,
+                    saveToPhotoAlbum: false
                 };
 
                 $cordovaCamera.getPicture(options).then(function (imageData) {
+                    console.log('Deus certo.');
                     console.log(imageData);
-                    var image = document.getElementById('myImage');
-                    image.src = imageData;
+                    $this.imgURI = "data:image/jpeg;base64," + imageData;
                 }, function (error) {
                     console.log(error);
                 });
