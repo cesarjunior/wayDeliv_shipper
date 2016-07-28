@@ -37,7 +37,7 @@
                                     .ref('estabelecimentos/-KKipucz8AD8xJ6NLedH/entregas/' + $stateParams.idTarefa)
                                     .update(data).then(function () {
                                 $ionicLoading.hide();
-                                $location.path('/lista-tarefas');
+                                $location.path('/app/lista-tarefas');
                             });
                         }, function (error) {
                             console.log(error);

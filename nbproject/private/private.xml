@@ -5,7 +5,10 @@
         <group>
             <file>file:/D:/Cesar%20Junior/App/wayDeliv_shipper/www/js/controllers/listaTarefas.controller.js</file>
             <file>file:/D:/Cesar%20Junior/App/wayDeliv_shipper/www/templates/listaTarefas.html</file>
+            <file>file:/D:/Cesar%20Junior/App/wayDeliv_shipper/www/js/controllers/starter.controller.js</file>
+            <file>file:/D:/Cesar%20Junior/App/wayDeliv_shipper/www/templates/menu.html</file>
             <file>file:/D:/Cesar%20Junior/App/wayDeliv_shipper/www/templates/concluirTarefa.html</file>
+            <file>file:/D:/Cesar%20Junior/App/wayDeliv_shipper/www/js/app.js</file>
             <file>file:/D:/Cesar%20Junior/App/wayDeliv_shipper/www/js/controllers/concluirTarefa.controller.js</file>
         </group>
     </open-files>
