@@ -9,22 +9,19 @@
 
         $this.tarefas = [];
 
-        $ionicHistory.removeBackView();
-        $scope.$on("$ionicView.enter", function (event, data) {
+        function actionBackButton() {
+            console.log('Action Go Back');
+            ionic.Platform.exitApp();
+        }
+        $scope.$on("$ionicView.enter", function () {
             // handle event
-            console.log("Entro: ", data.stateParams);
-            $ionicPlatform.onHardwareBackButton(function () {
-                console.log('Action Go Back');
-                ionic.Platform.exitApp();
-            });
+            console.log("Entro");
+            $ionicPlatform.onHardwareBackButton(actionBackButton);
         });
-        $scope.$on("$ionicView.leave", function (event, data) {
+        $scope.$on("$ionicView.leave", function () {
             // handle event
-            console.log("Saiu: ", data.stateParams);
-            $ionicPlatform.offHardwareBackButton(function () {
-                console.log('Off Action Go Back');
-                //$ionicPlatform.exitApp();
-            });
+            console.log("Saiu");
+            $ionicPlatform.offHardwareBackButton(actionBackButton);
         });
 
         getTarefas();
