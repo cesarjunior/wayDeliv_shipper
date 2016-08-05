@@ -3,13 +3,24 @@
     angular.module('wd-Shipper')
             .controller('listaTarefasController', listaTarefasController);
 
-    listaTarefasController.$inject = ['$scope', '$ionicLoading', '$ionicHistory'];
-    function listaTarefasController($scope, $ionicLoading, $ionicHistory) {
+    listaTarefasController.$inject = ['$scope', '$ionicLoading', '$ionicHistory', '$ionicPlatform'];
+    function listaTarefasController($scope, $ionicLoading, $ionicHistory, $ionicPlatform) {
         var $this = this;
 
         $this.tarefas = [];
 
         $ionicHistory.removeBackView();
+        $scope.$on("$ionicView.enter", function (event, data) {
+            // handle event
+            console.log("Entro: ", data.stateParams);
+            $ionicPlatform.onHardwareBackButton(function () {
+                console.log('Action Go Back');
+            });
+        });
+        $scope.$on("$ionicView.leave", function (event, data) {
+            // handle event
+            console.log("Saiu: ", data.stateParams);
+        });
 
         getTarefas();
         function getTarefas() {
