@@ -15,11 +15,16 @@
             console.log("Entro: ", data.stateParams);
             $ionicPlatform.onHardwareBackButton(function () {
                 console.log('Action Go Back');
+                $ionicPlatform.exitApp();
             });
         });
         $scope.$on("$ionicView.leave", function (event, data) {
             // handle event
             console.log("Saiu: ", data.stateParams);
+            $ionicPlatform.offHardwareBackButton(function () {
+                console.log('Off Action Go Back');
+                //$ionicPlatform.exitApp();
+            });
         });
 
         getTarefas();
