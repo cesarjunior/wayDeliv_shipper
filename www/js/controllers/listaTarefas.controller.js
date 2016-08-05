@@ -3,11 +3,13 @@
     angular.module('wd-Shipper')
             .controller('listaTarefasController', listaTarefasController);
 
-    listaTarefasController.$inject = ['$scope', '$ionicPlatform', '$cordovaGeolocation', '$cordovaDialogs', '$ionicLoading'];
-    function listaTarefasController($scope, $ionicPlatform, $cordovaGeolocation, $cordovaDialogs, $ionicLoading) {
+    listaTarefasController.$inject = ['$scope', '$ionicLoading', '$ionicHistory'];
+    function listaTarefasController($scope, $ionicLoading, $ionicHistory) {
         var $this = this;
 
         $this.tarefas = [];
+
+        $ionicHistory.removeBackView();
 
         getTarefas();
         function getTarefas() {
@@ -27,7 +29,7 @@
 
         $this.btnConcluir = concluirAction;
         function concluirAction() {
-            
+
         }
     }
 })();

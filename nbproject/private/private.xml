@@ -3,13 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Cesar%20Junior/App/wayDeliv_shipper/www/js/controllers/listaTarefas.controller.js</file>
-            <file>file:/D:/Cesar%20Junior/App/wayDeliv_shipper/www/templates/listaTarefas.html</file>
-            <file>file:/D:/Cesar%20Junior/App/wayDeliv_shipper/www/js/controllers/starter.controller.js</file>
-            <file>file:/D:/Cesar%20Junior/App/wayDeliv_shipper/www/templates/menu.html</file>
-            <file>file:/D:/Cesar%20Junior/App/wayDeliv_shipper/www/templates/concluirTarefa.html</file>
-            <file>file:/D:/Cesar%20Junior/App/wayDeliv_shipper/www/js/app.js</file>
-            <file>file:/D:/Cesar%20Junior/App/wayDeliv_shipper/www/js/controllers/concluirTarefa.controller.js</file>
+            <file>file:/D:/Cesar%20Junior/App/wayDeliv_shipper/www/js/controllers/login.controller.js</file>
+            <file>file:/D:/Cesar%20Junior/App/wayDeliv_shipper/www/templates/login.html</file>
         </group>
     </open-files>
 </project-private>
