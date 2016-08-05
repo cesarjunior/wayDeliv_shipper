@@ -15,7 +15,7 @@
             console.log("Entro: ", data.stateParams);
             $ionicPlatform.onHardwareBackButton(function () {
                 console.log('Action Go Back');
-                $ionicPlatform.exitApp();
+                ionic.Platform.exitApp();
             });
         });
         $scope.$on("$ionicView.leave", function (event, data) {
