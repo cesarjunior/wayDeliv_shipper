@@ -10,24 +10,19 @@
         $this.tarefas = [];
 
         function actionBackButton() {
-            console.log('Action Go Back');
             ionic.Platform.exitApp();
         }
         $scope.$on("$ionicView.enter", function () {
-            // handle event
-            console.log("Entro");
             $ionicPlatform.onHardwareBackButton(actionBackButton);
         });
         $scope.$on("$ionicView.leave", function () {
-            // handle event
-            console.log("Saiu");
             $ionicPlatform.offHardwareBackButton(actionBackButton);
         });
 
         getTarefas();
         function getTarefas() {
             $ionicLoading.show();
-            firebase.database().ref('estabelecimentos/-KKipucz8AD8xJ6NLedH/entregas/')
+            firebase.database().ref('estabelecimentos/entregas/')
                     .orderByChild('situacao')
                     .equalTo(null)
                     .on('value', function (snapshot) {
